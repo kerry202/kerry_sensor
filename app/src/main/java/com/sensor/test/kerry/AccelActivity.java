@@ -88,6 +88,7 @@ public class AccelActivity extends Activity {
         if (xText == null) {
             findViews();
         }
+        Log.e("","test");
         Intent intent = getIntent();
         int wtd = 9;
         avgThread = new Thread(runnable);//定期更新平均值的线程启动
