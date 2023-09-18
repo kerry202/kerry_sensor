@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 31
+    buildToolsVersion "31.0.1"
 
     defaultConfig {
         applicationId "kerry.test.sensor"
-        minSdkVersion 9
-        targetSdkVersion 23
+        minSdkVersion 21
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
     }
@@ -22,6 +22,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.13.2'
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:23.4.0'
     implementation files('libs/achartengine-1.2.0.jar')
     implementation files('libs/poi-3.14-20160307.jar')
