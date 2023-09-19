@@ -20,16 +20,20 @@ android {
 
     signingConfigs {
         debug {
-            keyAlias 'key'
-            keyPassword '123456'
-            storeFile file('../../keystore/key')
-            storePassword '123456'
+            storeFile file(pStoreFile)
+            storePassword pStorePassword
+            keyAlias pKeyAlias
+            keyPassword pKeyPassword
+            v1SigningEnabled true
+            v2SigningEnabled true
         }
         release {
-            keyAlias 'key'
-            keyPassword '123456'
-            storeFile file('../../keystore/key')
-            storePassword '123456'
+            storeFile file(pStoreFile)
+            storePassword pStorePassword
+            keyAlias pKeyAlias
+            keyPassword pKeyPassword
+            v1SigningEnabled true
+            v2SigningEnabled true
         }
     }
 
