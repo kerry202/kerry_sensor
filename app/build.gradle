@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: '../jenkins_package.gradle'
 
 android {
     namespace = "kerry.test.sensor"
