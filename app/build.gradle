@@ -63,7 +63,7 @@ android {
     android.applicationVariants.all {
         variant ->
             variant.outputs.all {
-                outputFileName = "自定义名称_v${defaultConfig.versionName}_${buildType.name}_.apk"
+                outputFileName = "rt_v${defaultConfig.versionName}_${buildType.name}_.apk"
             }
     }
 }
