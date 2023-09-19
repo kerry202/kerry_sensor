@@ -3,7 +3,7 @@ package com.sensor.test.kerry;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import kerry.test.sensor.R;
+import com.sensor.test.R;
 
 
 public class MainActivity extends AppCompatActivity {

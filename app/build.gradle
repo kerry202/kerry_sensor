@@ -1,12 +1,14 @@
-apply plugin: 'com.android.application'
+plugins {
+    id("com.android.application")
+}
 apply from: '../jenkins_package.gradle'
 
 android {
-    namespace = "kerry.test.sensor"
+    namespace = "com.sensor.test"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "kerry.test.sensor"
+        applicationId = "com.sensor.test"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
@@ -21,7 +23,7 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file(pStoreFile)
+            storeFile file(project.file("keystore/key"))
             storePassword pStorePassword
             keyAlias pKeyAlias
             keyPassword pKeyPassword
@@ -30,6 +32,7 @@ android {
         }
         release {
             storeFile file(pStoreFile)
+            storeFile file(project.file("keystore/key"))
             storePassword pStorePassword
             keyAlias pKeyAlias
             keyPassword pKeyPassword

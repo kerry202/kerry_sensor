@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="kerry.test.sensor">
+    package="com.sensor.test">
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
@@ -9,28 +10,17 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar">
 
-        <activity android:name="org.achartengine.GraphicalActivity" />
         <activity
-            android:name="com.sensor.test.kerry.SensorList"
-            >
-        </activity>
-        <activity
-            android:name="com.sensor.test.kerry.AccelActivity"
+            android:name=".kerry.MainActivity"
+            android:exported="true"
             android:label="@string/app_name"
-            android:exported="true">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-<!--        <activity-->
-<!--            android:name=".AccelActivity"-->
-<!--            >-->
-<!--        </activity>-->
-        <activity
-            android:name="com.sensor.test.kerry.FullScreenActivity"
-            >
         </activity>
     </application>
 
