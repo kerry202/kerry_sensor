@@ -1,24 +1,62 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "31.0.0"
+    namespace = "kerry.test.sensor"
+    compileSdk = 33
 
     defaultConfig {
-        applicationId "kerry.test.sensor"
-        minSdkVersion 21
-        targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+        applicationId = "kerry.test.sensor"
+        minSdk = 24
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
+
+
+    signingConfigs {
+        debug {
+            keyAlias 'key'
+            keyPassword '123456'
+            storeFile file('../../keystore/key')
+            storePassword '123456'
+        }
+        release {
+            keyAlias 'key'
+            keyPassword '123456'
+            storeFile file('../../keystore/key')
+            storePassword '123456'
+        }
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            // 移除无用的resource文件
+            shrinkResources true
+            minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                outputFileName = "自定义名称_v${defaultConfig.versionName}_${buildType.name}_.apk"
+            }
+    }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
